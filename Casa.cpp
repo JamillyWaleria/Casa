@@ -1,7 +1,29 @@
 #include "Casa.h"
+// inicializando variavel estatica(ele deve vir antes do construtor)
+ float Casa::precodaLuz=200;
+ 
+ 	Casa::Casa (const Casa &novacasa)
+	 {
+ 		nomedoProprietario=novacasa.luzdoQuarto;
+ 		nomedoProprietario=novacasa.nomedoProprietario;
+ 		nomedoProprietario=novacasa.portadaGaragem;
+	 }
+ 
 
+Casa::Casa(){
+	this->nomedoProprietario="Novo proprietario";
+	this->luzdoQuarto=false;
+	this->portadaGaragem=false;
+	
+}
+Casa::Casa(const string &nome ,bool luz,bool porta ){
+	this->nomedoProprietario=nome;
+	this->luzdoQuarto=luz;
+	this->portadaGaragem=porta;
+
+}
 // Porta Aberta
-void Casa::abrirPortadagaragem(){
+void Casa:: abrirPortadaGaragem(){
 	
 	if(portadaGaragem == true) {
 		cout<<"Porta ja está aberta";
@@ -50,14 +72,16 @@ void Casa::desligarLuzdoQuarto(){
 void Casa::setportadaGaragem(bool atual){
 	this->portadaGaragem= atual;
 }
-bool Casa::getportadaGaragem(){
-	return this->portadaGaragem
+ bool Casa::getPortadaGaragem(){
+	return this->portadaGaragem;
 }
 // SET E GET DA LUZ DO QUARTO
-Casa::setluzdoQuarto(bool atual2){
+void Casa::setluzdoQuarto(bool atual2){
 	this->luzdoQuarto = atual2;
 }
 bool Casa::getLuzdoQuarto(){
-	return this->luzdoQuarto
+	return this->luzdoQuarto;
 }
+// calculando o preco da luz (usando a variavel estática).
+
 
