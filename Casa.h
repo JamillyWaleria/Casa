@@ -34,4 +34,5 @@ class Casa
 		bool luzdoQuarto;
 		bool portadaGaragem;
 		static float precodaLuz;
+		
 };

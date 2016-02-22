@@ -2,7 +2,30 @@
 // inicializando variavel estatica(ele deve vir antes do construtor)
  float Casa::precodaLuz=200;
  
- 	Casa::Casa (const Casa &novacasa)
+ 	Casa::Casa (const Casa &novaCasa)
+ 	Casa:: Casa (const int nPessoas)
+ 	Casa::Casa()
+ 	
+
+{
+ 	if (nPessoas> 0)
+{
+	NomePessoas= new string [nPessoas];
+ 	quatPessoas=nPessoas;
+ 	cout<<" Numero de pessoas"
+ 	cout<< quatPessoas;
+}
+else 
+{
+nomePessoas=0;
+quatPessoas=0;
+cout<< "Não existe moradores"
+}
+
+}
+{ 
+delete []NomePessoas;
+}
 	 {
  		nomedoProprietario=novacasa.luzdoQuarto;
  		nomedoProprietario=novacasa.nomedoProprietario;
@@ -81,7 +104,56 @@ void Casa::setluzdoQuarto(bool atual2){
 }
 bool Casa::getLuzdoQuarto(){
 	return this->luzdoQuarto;
+	
 }
-// calculando o preco da luz (usando a variavel estática).
+// alocando
+void Casa::adicionarMorador(const string &novoMorador)
+{
+    if( onoff )
+    {
+        if( quatPessoas != 0 )
+        {
+            string * aux = new string[ nPessoas ];
+            
+            for(int i = 0; i < nPessoas; i++)
+                aux[ i ] = morador[ i ];
+            
+            delete [ ] morador;
+            
+            morador = new string[ ++nPessoas ] ;
+            
+            for(int i = 0; i < nPessoas-1; i++)
+                morador[ i ] = aux[ i ];
+                
+            morador[ nPessoas - 1 ] = novoMorador;
+                
+            delete [ ] aux;
+            
+        }
+        else
+        {
+            morador = new string[++nPessoas];
+            morador[0] = novoMorador;
+        }
+    }
+    else
+        cout << "Não existe morador";
+}
+
+void Casa::listarMorador( ) const
+{
+    if ( nPessoas> 0)
+    {
+        cout << "Os moradores sao: \n";
+        for(int i = 0; i < nPessoas; i++)
+            cout << morador[ i ] << '\n';
+    }
+     else
+         cout << "Nenhum morador cadastrado.";
+    
+}
+
+
+
 
 
