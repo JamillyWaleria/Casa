@@ -10,7 +10,7 @@ class CasaPraia : public Casa
 		CasaPraia();
 		CasaPraia(int quantHospedes);
 		void setexibirHospedes() ;
-		void getexibirHospedes();
+		void getexibirHospedes() const;
 		void getprecodoAluguel();
 		
 	protected:

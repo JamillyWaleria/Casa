@@ -16,15 +16,16 @@ class Mansao : public Casa
 		void getnumCozinheiros();
 		void getnumCamareiros();
 		void getnumBabas();
-		
-	protected:
+		~Mansao();
+	private:
 		float totalSalario;
 		int quantEmpregados;
 		int numBabas;
-		float totalSalario;
 		int numCozinheiros;
 		int numCamareiros;
-		int numBabas;
+		float salCozinheiro;
+	float salCamareiros;
+	float salBaba;
 	
 		
 };

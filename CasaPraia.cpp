@@ -4,12 +4,12 @@
 ostream &operator<<(ostream &out, const CasaPraia &p)
 
 {
-	out<<static_cast<Casa>(p)
+	out<<static_cast<Casa>(p);
 }
 CasaPraia::CasaPraia()
 {
 	quantHospedes=0;
-	precoAluguel=100*quantHopedes;
+	precoAluguel=100*quantHospedes;
 
 }
 CasaPraia::CasaPraia(int quantHospedes)
@@ -17,13 +17,13 @@ CasaPraia::CasaPraia(int quantHospedes)
 	this->quantHospedes=quantHospedes;
 	precoAluguel=100*quantHospedes;
 }
-void Casa::setexibirHospedes;
+void CasaPraia::setexibirHospedes()
 {
 	cout<<" Quantidade de hospedes:\n";
-	cin<<quantHospedes;
+	cin>>quantHospedes;
 	precoAluguel=100*quantHospedes;
 }
-void CasaPraia::getexibirHospedes()const;
+void CasaPraia::getexibirHospedes() const
 {
 	cout<<quantHospedes;
 }

@@ -1,23 +1,24 @@
 #ifndef CASA_H
 #define CASA_H
-#include"CasaPraia.h"
-#include"Mansao.h"
+
 #include"Data.h"
 #include<string>
 #include<iostream>
 #include<stdlib.h>
-#include<stdio.h>
+#include "Moradia.h"
+
 using namespace std;
 
-class Casa:public Moradia
+class Casa : public Moradia
 {
 	friend ostream &operator<<(ostream &, const Casa &);//sobregarga de operadores.
 	
 	public: // Métodos
 	Casa (); // Construtor vazio
 	Casa(const Casa&);// cópia
-	Casa (const string &morador="MORADOR:", bool porta=false);// Construtor default
-
+	Casa( double precodaLuz);
+	Casa (const string &morador, bool porta=false);// Construtor default
+~Casa();
 
 // Dados de Entrada
 
@@ -25,13 +26,14 @@ class Casa:public Moradia
 	void setdigitarnovoMorador( string);
     void setcalcularprecodaLuz (double);
     void setdatadeconstrucao();
-    void setcalcularquantKwh(double)
+    void setcalcularquantKwh(double);
 // Saída de dados
 	
 	bool getPortadaGaragem();
     float getcalcularPrecodaluz();
     string getdigitarnovoMorador();
     float getcalcularquantKwh();
+    void getprecodaLuz();
     
 // Função-membro
 	void abrirPortadaGaragem();
@@ -40,15 +42,18 @@ class Casa:public Moradia
 	void digitarnovoMorador();
 	void calcularquantKwh();
 	
+	void adicionarMorador(const string &novoMorador);
+	void listarMorador () const;
+	
 // Atributos
 	protected:
-		
 		static double precodaLuz;
 		static double precodoKwh;
 		double quantKwh;
 		bool portadaGaragem;
-		string novoMorador;
+		string* novoMorador;
 		Data datadeConstrucao;
+		int nPessoas;
 };
 #endif // Casa
 	

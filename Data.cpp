@@ -51,12 +51,12 @@ int Data::VerificaDia(int datadeConstrucao) const
     static const int diasPorMes[ 13 ] = 
        { 0, 31, 28, 31, 30, 31, 30, 31, 31, 30, 31, 30, 31 };
     
-    if ( diaTeste > 0 && datadeConstrucao <= diasPorMes[ mes ] )
+    if ( datadeConstrucao > 0 && datadeConstrucao <= diasPorMes[ mes ] )
         return datadeConstrucao;
     
-    if ( mes == 2 && diaTeste == 29 && ( ano % 400 == 0 ||
+    if ( mes == 2 && datadeConstrucao == 29 && ( ano % 400 == 0 ||
             ( ano % 4 == 0 && ano % 100 != 0 ) ) )
-        return diaTeste;
+        return datadeConstrucao;
     
     cout << "Dia invalido (" << datadeConstrucao << ") configurado para 1.\n";
     return 1; 
@@ -68,5 +68,3 @@ int Data::VerificaDia(int datadeConstrucao) const
 
 
 
-
-}

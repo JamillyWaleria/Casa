@@ -1,49 +1,29 @@
 #include"Moradia.h"
-#include"Casa.h"
-#include"CasaPraia.h"
-#include"Mansao.h"
 #include<string>
 #include<iostream>
 #include<stdlib.h>
 #include<stdio.h>
 
-ostream &operator <<(ostream &out, const Moradia &m)
+ostream &operator <<(ostream &out, const Moradia &m){
+	
+}
 //{out <<static_cast<Moradia> (m)} implementação da sobregarga do operador (casa ou moradia).
 // Construtor 
-Moradia::Moradia (const Moradia &novaMoradia)
-Moradia::~Moradia()
-{
-{
-	(nPessoas>0)
-	{
-	nomePessoas=new string [nPessoas]
-	quantPessoas=nPessoas;
-	cout<<"Número de pessoas existentes na moradia:\n";
-	cout<<quantPessoas;
-	}
-	
-else 
-		{
-			nomePessoas=0;
-			quantPessoas=0;
-			cout<<" Não existe moradores !";	
-		}
+Moradia::Moradia (const Moradia &novaMoradia){
+	this->luzdoQuarto = novaMoradia.luzdoQuarto;
+	this->nomedoProprietario=novaMoradia.nomedoProprietario;
+
 }
-//Destrutor
-		{delete [] nomePessoas;}
-		
-				{
-				  nomedoProprietario=novamoradia.luzdoQuarto;
-				  nomedoProprietario=nova.moradia.nomedoProprietario;
-				} 
-Moradia:: Moradia()
+	  	
+/*Moradia:: Moradia()
 // Validação de dados
 // this->nomedoProprietario=" Proprietario\n"
  {
- 	this->nomedoProprietario="PROPRIETÁRIO:\n"
+ 	this-> nomedoProprietario="PROPRIETÁRIO:\n";
  	this->luzdoQuarto=false;
  	
- }
+ }*/
+ 
  			Moradia::Moradia(const string &proprietario, bool luz)
  			{
  			this->nomedoProprietario=proprietario;
@@ -62,25 +42,44 @@ void Moradia::digitarnomedoProprietario()
 }
 
 // Função membro da Luz do Quarto
-void:: Moradia::ligarLuzdoQuarto()
+void:: Moradia::ligarluzdoQuarto()
 {
 	if(luzdoQuarto==true)
-	cout<<" A luz do quarto já está acessa !"
-}
+	{
+		cout<<" A luz do quarto já está acessa !";
+	}
+	
 else
 {
 	this->luzdoQuarto=true;
-	cout<<" Luz acessa!"
+	cout<<" Luz acessa!";
+}
+}
+
+void:: Moradia::desligarluzdoQuarto()
+{
+	if(luzdoQuarto==false)
+	{
+		cout<<" A luz do quarto já está apagada !";
+	}
+	
+else
+{
+	this->luzdoQuarto=false;
+	cout<<" Luz apagada!";
+}
 }
 //SET e GET- Métodos Acessores.(Luz do quarto)
-void Casa::setLuzdoQuarto(bool atual2)
+void Moradia::setluzdoQuarto(bool atual2)
 {
 	this->luzdoQuarto=atual2;// atualiza o estado da luz .
 }
-bool Casa::getLuzdoQuarto()// verifica o tipo de retorno da função.
+bool Moradia::getluzdoQuarto()// verifica o tipo de retorno da função.
 {
 		return this ->luzdoQuarto;// retorna o valor em boleano.
 }
-};
 
+Moradia::~Moradia()
+{
+}
 
