@@ -1,159 +1,167 @@
 #include "Casa.h"
-// inicializando variavel estatica(ele deve vir antes do construtor)
- float Casa::precodaLuz=200;
- 
- 	Casa::Casa (const Casa &novaCasa)
- 	Casa:: Casa (const int nPessoas)
- 	Casa::Casa()
- 	
+#include"CasaPraia.h"
+#include"Mansao.h"
+#include<string>
+#include<iostream>
+#include<stdlib.h>
+#include<stdio.h>
+
+// Inicializando a variável estática (ela deve vir antes do construtor)
+float Casa::precodaLuz=20;
+double Casa::precoKwh= 0,525389;
+
+ostream &operator <<(ostream &out, const Casa &c)
+{
+	out<<static_cast<Moradia> (c)
+}//implementação da sobregarga de operador
+
+// Construtor
+
+Casa::Casa( const Casa &novaCasa)
+Casa::~Casa(){
+
+//*****************************************************************************
+// Verifica a quantidade de pessoas existentes na casa a partir do nome delas usando um 
+//vetor de string, que será usado para armazenar a quantidade de nomes dos moradores .
+void Casa::setdigitarNome()
+{
+	if (nPessoas>0)
+{
+	nomePessoas= new string [nPessoas]// Alocação dinâmica de memória usando de vetor de ponteiros
+	quantPessoas= nPessoas;
+	cout<<" Número de pessoas:\n";
+	cout<< quantPessoas;
+}
+ else 
+{
+	nomePessoas=0;
+	quantPessoas=0;
+	cout<< "Não existe moradores !"
+}
+}
+// Destrutor
+Casa::~Casa() // Destrutor
+{
+	
+
+delete [] NomePessoas;
+}	
+// ******************************************************************************
+
+
+// Construtor vazio
+Casa::Casa()
+:Moradia ()
+{
+// Validadação de dados
+	this->nomedoProprietario=" Novo proprietario:";
+	this->portadaGaragem=false;
+}
+
+Casa::Casa (const string &nome, bool porta){ // Construtor de cópia
+	this->nomedoProprietario=nome;
+	this->portadaGaragem=porta;
+}
+//*********************************************************************************
+// Função-membro para "Porta Aberta".
+void Casa::abrirPortadaGaragem()
+{
+if (portadaGaragem==true)// Avisa quando  a porta já estiver aberta
+{
+		cout<<"Porta já está aberta !";
+}
+else // Se não estiver aberta, a abrirá
 
 {
- 	if (nPessoas> 0)
+	this->portadaGaragem=true;
+	cout<<" Porta Aberta!";
+}
+}
+// Função-membro para " Porta fechada".
+void Casa::fecharPortadaGaragem()// construtor
 {
-	NomePessoas= new string [nPessoas];
- 	quatPessoas=nPessoas;
- 	cout<<" Numero de pessoas"
- 	cout<< quatPessoas;
+if(portadaGaragem==false)//Avisa quando a porta estiver fechada
+{
+	cout<<"Porta já está fechada !";
+}
+else // se não estiver fechada, a fechará
+{
+	this->portadaGaragem=true;
+	cout<<" Porta Fechada !";
+}
+}
+
+//********************************************************************************************
+// SET e GET- Métodos Acessores.(Porta da garagem)
+void Casa::setPortadaGaragem(bool atual)// construtor que modifica o estada da porta da garagem.
+
+{
+	this->portadaGaragem=atual;//atualiza o estado da porta.
+}
+bool Casa::getPortadaGaragem() // verifaca o tipo de  retorno da função.
+{
+		return this->portadaGaragem;// retorna o valor em boleano.
+}
+//*********************************************************************************************
+//Alocação dinâmica de memória (uso de ponteiros)
+// Cadastra novos moradores na casa usando um vetor string de ponteiros (nPessoas) que é usado para guardar os nomes dos novos moradores.
+void Casa::adicionarMorador(const string &novoMorador)
+{
+	if(onoff)
+{
+	if(quantPessoas !=0)
+}
+string *aux=new string [nPessoas];
+
+	for (int i=0; i<nPessoas; i++)
+	aux [i]=morador [i];
+
+//Destrutor
+delete [] morador;
+morador= new string [++nPessoas];
+
+for (int i=0; i<nPessoas-1;i++)
+	morador [i]=aux[i];
+
+morador [nPessoas-1]=novoMorador;
+
+delete [] aux;
+}
+else // Se a quantidade de nomes for igual a zero , então o sistema irá mostrar que não existe novo morador.
+{
+morador= new string [++nPessoas];
+morador[0]=novoMorador;
 }
 else 
 {
-nomePessoas=0;
-quatPessoas=0;
-cout<< "Não existe moradores"
+cout<<" Não existe novo morador.";
 }
-
-}
-{ 
-delete []NomePessoas;
-}
-	 {
- 		nomedoProprietario=novacasa.luzdoQuarto;
- 		nomedoProprietario=novacasa.nomedoProprietario;
- 		nomedoProprietario=novacasa.portadaGaragem;
-	 }
- 
-
-Casa::Casa(){
-	this->nomedoProprietario="Novo proprietario";
-	this->luzdoQuarto=false;
-	this->portadaGaragem=false;
-	
-}
-Casa::Casa(const string &nome ,bool luz,bool porta ){
-	this->nomedoProprietario=nome;
-	this->luzdoQuarto=luz;
-	this->portadaGaragem=porta;
-
-}
-// Porta Aberta
-void Casa:: abrirPortadaGaragem(){
-	
-	if(portadaGaragem == true) {
-		cout<<"Porta ja está aberta";
-	}
-	else{
-		this->portadaGaragem = true;
-		 cout<<"Porta aberta."; 
-	}
-//Porta Fechada	
-}
-void Casa::fecharPortadaGaragem(){
-	if(portadaGaragem == false) {
-		cout<<"Porta ja está fechada";
-	}
-	else{
-		this->portadaGaragem = false;
-		 cout<<"Porta fechada."; 
-	}
-	
-}
-//ligar luz do quarto
-void Casa::ligarLuzdoQuarto(){
-	if(luzdoQuarto== true) {
-		cout<<"Luz do quarto ja está ligada.";
-	}
-	else{
-		this->luzdoQuarto= true;
-		 cout<<"Luz Ligada."; 
-	}
-	
-}
-// desligar luz do quarto
-
-void Casa::desligarLuzdoQuarto(){
-	if(luzdoQuarto== false) {
-		cout<<"Luz do quarto ja está desligada";
-	}
-	else{
-		this->luzdoQuarto= false;
-		 cout<<"Luz desligada."; 
-	}
-	
-}
-
-// SET E GET DA PORTA DA GARAGEM
-void Casa::setportadaGaragem(bool atual){
-	this->portadaGaragem= atual;
-}
- bool Casa::getPortadaGaragem(){
-	return this->portadaGaragem;
-}
-// SET E GET DA LUZ DO QUARTO
-void Casa::setluzdoQuarto(bool atual2){
-	this->luzdoQuarto = atual2;
-}
-bool Casa::getLuzdoQuarto(){
-	return this->luzdoQuarto;
-	
-}
-// alocando
-void Casa::adicionarMorador(const string &novoMorador)
+void Casa::listarMorador () const //Cadastra o novo morador
 {
-    if( onoff )
-    {
-        if( quatPessoas != 0 )
-        {
-            string * aux = new string[ nPessoas ];
-            
-            for(int i = 0; i < nPessoas; i++)
-                aux[ i ] = morador[ i ];
-            
-            delete [ ] morador;
-            
-            morador = new string[ ++nPessoas ] ;
-            
-            for(int i = 0; i < nPessoas-1; i++)
-                morador[ i ] = aux[ i ];
-                
-            morador[ nPessoas - 1 ] = novoMorador;
-                
-            delete [ ] aux;
-            
-        }
-        else
-        {
-            morador = new string[++nPessoas];
-            morador[0] = novoMorador;
-        }
-    }
-    else
-        cout << "Não existe morador";
-}
-
-void Casa::listarMorador( ) const
+	if( nPessoas>0)
 {
-    if ( nPessoas> 0)
-    {
-        cout << "Os moradores sao: \n";
-        for(int i = 0; i < nPessoas; i++)
-            cout << morador[ i ] << '\n';
-    }
-     else
-         cout << "Nenhum morador cadastrado.";
-    
+cout<<" Os moradores são:\n"; // Mostrar a lista de nomes dos novos moradores cadastrados.
+for(int i=0;i<nPessoas;i++)
+cout<<morador [i]<<"\n";
+}
+}
+else
+{
+
+cout<<" Nenhum morador cadastrador!";
+}
+Casa::Casa()// Calcular o valor total para o preço da conta do consumo de energia elétrica
+{
+	precodaLuz=precodaLuz+quantKwh*precoKwh;
+}
+Casa::Casa( double precoLuz)
+{
+	this->precoLuz=precoLuz;
+	precodaLuz=precodaLuz+quantKwh*precoKwh;
 }
 
-
-
-
-
+	void Casa::getprecodaLuz()
+{
+		cout>>precoLuz;		
+}
+};

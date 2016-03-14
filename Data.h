@@ -1,22 +1,23 @@
 #ifndef DATA_H
 #define	DATA_H
+#include <iostream>
+using std::ostream;
 
 class Data 
 {
+	friend ostream &operator<< (ostream &output, const Data &data);
+    
 public:
+	
+	
     
     Data( int = 1, int = 1, int = 1900 );
-    
+	Data( const Data & );
+	
     void print() const;
-    
-    void setDia( int diaIn ) { dia = verificaDia( diaIn ); }
-    void setMes( int mesIn ) { if ( mesIn >= 1 && mesIn <= 12 ) mes = mesIn; }
-    void setAno( int anoIn ) { if ( anoIn >= 0 ) ano = anoIn; }
-    
-    
-    int getDia( ) const { return dia; }
-    int getMes( ) const { return mes; }
-    int getAno( ) const { return ano; }
+	int getDia() const;
+	int getMes() const;
+	int getAno() const;
     
 private:
     
@@ -24,7 +25,7 @@ private:
     int dia;
     int ano;
     
-    int verificaDia( int ) const;
+    int VerificaDia( int ) const;
 
 
 };

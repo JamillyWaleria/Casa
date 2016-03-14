@@ -1,38 +1,55 @@
+#ifndef CASA_H
+#define CASA_H
+#include"CasaPraia.h"
+#include"Mansao.h"
+#include"Data.h"
+#include<string>
+#include<iostream>
+#include<stdlib.h>
+#include<stdio.h>
+using namespace std;
 
-#include <iostream>
-#include <string>
-
-using std::string;
-using std::cout;
-
-class Casa
+class Casa:public Moradia
 {
+	friend ostream &operator<<(ostream &, const Casa &);//sobregarga de operadores.
+	
+	public: // Métodos
+	Casa (); // Construtor vazio
+	Casa(const Casa&);// cópia
+	Casa (const string &morador="MORADOR:", bool porta=false);// Construtor default
 
-	public:// metodos
-		Casa();
-		Casa(const string &nome,bool luz,bool porta);
-		void setluzdoQuarto(bool);
-		void setportadaGaragem(bool);
-		void setdigitarnome (string);
-		void setcalcularprecodaLuz(float);
-		
-		bool getLuzdoQuarto();
-		bool getPortadaGaragem();
-	    string getdigitarNome();
-	    float getcalcularPreco();
-		
-		void abrirPortadaGaragem();
-		void fecharPortadaGaragem();
-		void ligarLuzdoQuarto();
-		void desligarLuzdoQuarto();
-	    string digitarNomedoProprietario();
-	    void calcularPrecodaLuz();
 
+// Dados de Entrada
+
+	void setportadaGaragem(bool);
+	void setdigitarnovoMorador( string);
+    void setcalcularprecodaLuz (double);
+    void setdatadeconstrucao();
+    void setcalcularquantKwh(double)
+// Saída de dados
+	
+	bool getPortadaGaragem();
+    float getcalcularPrecodaluz();
+    string getdigitarnovoMorador();
+    float getcalcularquantKwh();
+    
+// Função-membro
+	void abrirPortadaGaragem();
+	void fecharPortadaGaragem ();
+	void calcularprecodaLuz ();
+	void digitarnovoMorador();
+	void calcularquantKwh();
+	
+// Atributos
+	protected:
 		
-	private:// atributos
-		string nomedoProprietario;
-		bool luzdoQuarto;
+		static double precodaLuz;
+		static double precodoKwh;
+		double quantKwh;
 		bool portadaGaragem;
-		static float precodaLuz;
-		
+		string novoMorador;
+		Data datadeConstrucao;
 };
+#endif // Casa
+	
+
