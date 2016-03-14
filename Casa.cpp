@@ -26,7 +26,7 @@ Casa::Casa( const Casa &novaCasa)
 //*****************************************************************************
 // Verifica a quantidade de pessoas existentes na casa a partir do nome delas usando um 
 //vetor de string, que será usado para armazenar a quantidade de nomes dos moradores .
-void Casa::setdigitarnovoMorador(string)
+void Casa::setadicionarnovoMorador(string)
 {
 	if (nPessoas>0)
 {
@@ -108,7 +108,7 @@ bool Casa::getPortadaGaragem() // verifaca o tipo de  retorno da função.
 //*********************************************************************************************
 //Alocação dinâmica de memória (uso de ponteiros)
 // Cadastra novos moradores na casa usando um vetor string de ponteiros (nPessoas) que é usado para guardar os nomes dos novos moradores.
-void Casa::adicionarMorador(const string &morador)
+void Casa::adicionarnovoMorador(const string &morador)
 {
 	if(nPessoas !=0)
 	{

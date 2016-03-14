@@ -8,14 +8,17 @@ class CasaPraia : public Casa
 	
 	public:
 		CasaPraia();
-		CasaPraia(int quantHospedes);
+		CasaPraia(int quantHospedes, int dias);
 		void setexibirHospedes() ;
 		void getexibirHospedes() const;
 		void getprecodoAluguel();
+		void setquantDias();
+		void getquantDias();
 		
 	protected:
 		float precoAluguel;
 		int quantHospedes;
+		int quantDias;
 };
 
 #endif

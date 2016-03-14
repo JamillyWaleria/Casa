@@ -1,6 +1,5 @@
 #ifndef CASA_H
 #define CASA_H
-
 #include"Data.h"
 #include<string>
 #include<iostream>
@@ -23,7 +22,7 @@ class Casa : public Moradia
 // Dados de Entrada
 
 	void setportadaGaragem(bool);
-	void setdigitarnovoMorador( string);
+	void setadicionarnovoMorador( string);
     void setcalcularprecodaLuz (double);
     void setdatadeconstrucao();
     void setcalcularquantKwh(double);
@@ -34,15 +33,16 @@ class Casa : public Moradia
     string getdigitarnovoMorador();
     float getcalcularquantKwh();
     void getprecodaLuz();
+
     
 // Função-membro
 	void abrirPortadaGaragem();
 	void fecharPortadaGaragem ();
 	void calcularprecodaLuz ();
-	void digitarnovoMorador();
+	void adicionarnovoMorador();
 	void calcularquantKwh();
 	
-	void adicionarMorador(const string &novoMorador);
+	void adicionarnovoMorador(const string &novoMorador);
 	void listarMorador () const;
 	
 // Atributos

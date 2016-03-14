@@ -1,6 +1,7 @@
 #ifndef MANSAO_H
 #define MANSAO_H
-
+#include<iostream>
+#include<stdlib.h>
 #include "Casa.h"
 
 class Mansao : public Casa
@@ -8,24 +9,29 @@ class Mansao : public Casa
 	public:
 		Mansao();
 		Mansao(int Empregados);
-		void setexibirEmpregados();
+		void setquantEmpregados();
 		void setnumCozinheiros();
 		void setnumCamareiros();
 		void setnumBabas();
-		void gettotalSalario();
 		void getnumCozinheiros();
 		void getnumCamareiros();
 		void getnumBabas();
-		~Mansao();
+		void getpagamentoTotal();
+			void calcularpagamentoTotal();
+		void calcularsalCozinheiros();
+		void calcularsalCamareiros();
+		void calcularsalBabas();
+		
+
 	private:
-		float totalSalario;
 		int quantEmpregados;
 		int numBabas;
 		int numCozinheiros;
 		int numCamareiros;
-		float salCozinheiro;
-	float salCamareiros;
-	float salBaba;
+		float salCozinheiros;
+		float salCamareiros;
+		float salBabas;
+		float pagamentoTotal;
 	
 		
 };

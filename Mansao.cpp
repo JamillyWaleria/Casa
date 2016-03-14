@@ -11,12 +11,14 @@ Mansao::Mansao()
 	numCozinheiros=0;
 	numCamareiros=0;
 	numBabas=0;
-	salCozinheiro=1500;
-	salCamareiros=1300;
-	salBaba=2000;
+	pagamentoTotal=0;
+	salCozinheiros=1500*numCozinheiros;
+	salCamareiros=1300*numCamareiros;
+	salBabas=2000*numBabas;
+	pagamentoTotal=salCozinheiros+salCamareiros+salBabas;
+	quantEmpregados=numCozinheiros+numCamareiros+numBabas;
+	
 		
 }
 
-Mansao::~Mansao()
-{
-}
+
