@@ -16,19 +16,19 @@ CasaPraia::CasaPraia()
 CasaPraia::CasaPraia(int quantHospedes, int quantDias)
 {
 	this->quantHospedes=quantHospedes;
-	precoAluguel=100*quantHospedes;
+	precodoAluguel=100*quantHospedes;
 }
 void CasaPraia::setexibirHospedes()
 {
 	cout<<" Quantidade de hospedes:\n";
 	cin>>quantHospedes;
-	precoAluguel=100*quantDias+100*quantHospedes;
+	precodoAluguel=100*quantDias+100*quantHospedes;
 }
 void CasaPraia::getexibirHospedes() const
 {
 	cout<<quantHospedes;
 }
-void CasaPraia::getprecodoAluguel()
+void CasaPraia::getcalcularprecodoAluguel()
 {
-	cout<<precoAluguel;
+	cout<<precodoAluguel;
 };

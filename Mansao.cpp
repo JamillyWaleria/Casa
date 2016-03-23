@@ -17,8 +17,15 @@ Mansao::Mansao()
 	salBabas=2000*numBabas;
 	pagamentoTotal=salCozinheiros+salCamareiros+salBabas;
 	quantEmpregados=numCozinheiros+numCamareiros+numBabas;
-	
-		
+	quantDias=0;
+	precodoAluguel=2500*quantDias;	
 }
-
-
+Mansao::Mansao(int quantDias)
+{
+	this->quantDias=quantDias;
+	precodoAluguel=2500*quantDias;
+}
+void Mansao::getcalcularprecodoAluguel()
+{
+	cout<<precodoAluguel;
+};

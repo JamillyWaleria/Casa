@@ -10,6 +10,7 @@ class Mansao : public Casa
 		Mansao();
 		Mansao(int Empregados);
 		void setquantEmpregados();
+		void setquantDias();
 		void setnumCozinheiros();
 		void setnumCamareiros();
 		void setnumBabas();
@@ -17,14 +18,15 @@ class Mansao : public Casa
 		void getnumCamareiros();
 		void getnumBabas();
 		void getpagamentoTotal();
-			void calcularpagamentoTotal();
+		void calcularpagamentoTotal();
 		void calcularsalCozinheiros();
 		void calcularsalCamareiros();
 		void calcularsalBabas();
-		
+		void getcalcularprecodoAluguel();
 
 	private:
 		int quantEmpregados;
+		int quantDias;
 		int numBabas;
 		int numCozinheiros;
 		int numCamareiros;
@@ -32,6 +34,7 @@ class Mansao : public Casa
 		float salCamareiros;
 		float salBabas;
 		float pagamentoTotal;
+		float precodoAluguel;
 	
 		
 };

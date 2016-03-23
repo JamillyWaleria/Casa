@@ -11,7 +11,7 @@ class CasaPraia : public Casa
 		CasaPraia(int quantHospedes, int dias);
 		void setexibirHospedes() ;
 		void getexibirHospedes() const;
-		void getprecodoAluguel();
+	virtual float void getcalcularprecodoAluguel();
 		void setquantDias();
 		void getquantDias();
 		

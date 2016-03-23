@@ -36,14 +36,16 @@ Moradia (const string &proprietario="JAMILLY VALÉRIA:\n", bool luz=false); // co
 	void getProprietario();
 	void digitarnomedoProprietario();
 	void setluzdoQuarto(bool);
-	bool getluzdoQuarto();
+	bool getluzdoQuarto();	
 	void ligarluzdoQuarto();
 	void desligarluzdoQuarto();
+	virtual float calcularprecodoAluguel( ) = 0;// USANDO O  POLIFORMISMO
 
 
 protected:
 	string nomedoProprietario;
 	bool luzdoQuarto;
+	float calcularprecodoAluguel;// USANDO O POLIMORFISMO
 	
 	
 	
