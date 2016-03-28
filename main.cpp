@@ -3,15 +3,52 @@
 #include "CasaPraia.h"
 #include "Mansao.h"
 #include"Moradia.h"
+#include<vector>
 using std::cout;
 using std::cin;
 int main (int argc, char** argv)
 {
 	
+	vector<Casa*> casas(1);
 	
+	Casa[0]=new CasaPraia();
+	
+	for (int i=0; i<casas.size(); i++)
+	{
+		CasaPraia *ptcp = dynamic_cast< CasaPraia*> (casas [i]);
+		Mansao *ptms = dynamic_cast< Mansao*> (casas [i]);
+		
+//CASA DA PRAIA
+        if(ptcp!=0)
+   {
+   	float precoAluguel=ptcp->getcalcularprecodoAluguel();
+           cout << "valor a ser pago:" <<precodoAluguel<< endl;
+           ptcp->setprecodoAluguel( 1.10 * precodoAluguel );
+           cout << "Valor a ser pago com acrescimo de 10%: $";
+              << ptcp->getcalcularprecodoAluguel() << endl;
+        } // end if
+
+        cout << "Aluguel a receber $" ;
+        casas[ i ]->calcularprecodoAluguel();
+        cout << "\n\n";
+     } // end for
+
+     // release objects pointed to by vector's elements
+     for ( int j = 0; j < casas.size(); j++ )
+     {        // output class name                           
+        cout << "deleting object of "                  
+           << typeid( *casas[ j ] ) << endl;
+
+        delete casas[ j ];
+     } // end for
+
+     return 0;
+}
+  
 	Casa  c;
 	Mansao ms;
-	CasaPraia p;
+	/*CasaPraia p;*/
+	
 	Moradia m;
 	int opt;
 	int opt2;
