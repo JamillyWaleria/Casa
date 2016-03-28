@@ -22,10 +22,10 @@ class Casa : public Moradia
 // Dados de Entrada
 
 	void setportadaGaragem(bool);
-	void setadicionarnovoMorador( string);
-    void setcalcularprecodaLuz (double);
+	void setnovoMorador( string);
+    void setprecodaLuz (double);
     void setdatadeconstrucao();
-    void setcalcularquantKwh(double);
+    void setquantKwh(double);
 // Saída de dados
 	
 	bool getPortadaGaragem();
@@ -41,7 +41,7 @@ class Casa : public Moradia
 	void calcularprecodaLuz ();
 	void adicionarnovoMorador();
 	void calcularquantKwh();
-	
+	virtual float calcularprecodoAluguel( );
 	void adicionarnovoMorador(const string &novoMorador);
 	void listarMorador () const;
 	
@@ -54,6 +54,7 @@ class Casa : public Moradia
 		string* novoMorador;
 		Data datadeConstrucao;
 		int nPessoas;
+		float calcularprecodoAluguel;
 };
 #endif // Casa
 	
