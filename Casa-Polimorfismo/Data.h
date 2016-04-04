@@ -1,0 +1,34 @@
+#ifndef DATA_H
+#define	DATA_H
+#include <iostream>
+using std::ostream;
+
+class Data 
+{
+	friend ostream &operator<< (ostream &output, const Data &data);
+    
+public:
+	
+	
+    
+    Data( int = 1, int = 1, int = 1900 );
+	Data( const Data & );
+	
+    void print() const;
+	int getDia() const;
+	int getMes() const;
+	int getAno() const;
+    
+private:
+    
+    int mes;
+    int dia;
+    int ano;
+    
+    int VerificaDia( int ) const;
+
+
+};
+
+#endif	/* DATA_H */
+
