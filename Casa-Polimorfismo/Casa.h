@@ -4,7 +4,7 @@
 #include<string>
 #include<iostream>
 #include<stdlib.h>
-#include "Moradia.h"
+#include <moradia.h>
 
 using namespace std;
 
@@ -55,7 +55,7 @@ class Casa : public Moradia
 	void informarmetrosQuadrados() ;
 	void informartipodeMoradia();
 	void informarCategoria() ;
-	void calcularvalorIptu();
+	virtual float calcularvalorIptu();
 		
 // Atributos
 	protected:
@@ -76,3 +76,15 @@ class Casa : public Moradia
 #endif // Casa
 	
 
+#ifndef CASA_H
+#define CASA_H
+
+#include "moradia.h"
+
+class Casa : public Moradia
+{
+	public:
+	protected:
+};
+
+#endif

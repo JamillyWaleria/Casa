@@ -6,7 +6,7 @@
 
 ostream &operator <<(ostream &out, const Apartamento &ap)
 {
-	out<<static_cast<Moradia> (c);
+	///out<<static_cast<Moradia> (ap);
 }//implementação da sobregarga de operador
 
 // Construtor
@@ -14,11 +14,11 @@ Apartamento::Apartamento()
 {
 	metrosQuadrados=0;
 	Categoria=0;
-	tipodeMoradia=
+	
 
 }
 
-Apartamento::Apartamento(float metrosQuadrados, const string &tipo,float categoria, int metros )
+Apartamento::Apartamento(float metrosQuadrados, const string &tipodeMoradia,float Categoria)
 {
 	this->metrosQuadrados=metrosQuadrados;
 	this->tipodeMoradia=tipodeMoradia;
@@ -35,49 +35,47 @@ Apartamento::Apartamento(float metrosQuadrados, const string &tipo,float categor
 	cin>>tipodeMoradia;	
 	}
 
-void Apartamento::calcularvalorIptu()
-void Apartamento::informartipodeMoradia()		
-{ 
-    if(tipodeMoradia="Precário" and metrosQuadrados<= 50)
-    Categoria=429.99;
-    Iptu=Categoria+metrosQuadrados*1.5+26.99;
-   else
-   if(tipodeMoradia="Popular" and metrosQuadrados<= 50)
-    Categoria=536.76;
-    Iptu=Categoria+metrosQuadrados*1.5+26.99;
-    else
-    Categoria=763.88;
-    Iptu=Categoria+metrosQuadrados*1.5+26.99;
-}
-    
-   void Apartamento::calcularvalorIptu()
-   void Apartamento::informartipodeMoradia()
+
+	void Apartamento::calcularvalorIptu()
 {
-   if(tipodeMoradia="Precário" and metrosQuadrados<= 50.01 and metrosQudrados<=75)
-    Categoria=429.99;
-    Iptu=Categoria+metrosQuadrados*2.5+36.99;
-   else
-   if(tipodeMoradia="Popular" and metrosQuadrados<= 50.01 and metrosQuadrados<=75)
-    Categoria=536.76;
-    Iptu=Categoria+metrosQuadrados*2.5+36.99;
-    else
-    Categoria=763.88;
-    Iptu=Categoria+metrosQuadrados*2.5+36.99;
-}
-   void Apartamento::calcularprecodoAluguel()
-   void Apartamento::informartipodeMoradia()
-   
-   {
-   if(tipodeMoradia="Precário" and metrosQuadrados>75)
-    Categoria=429.99;
-    Iptu=Categoria+metrosQuadrados*3.5+36.99;
-   else
-   if(tipodeMoradia="Popular" and metrosQuadrados>75)
-    Categoria=536.76;
-    Iptu=Categoria+metrosQuadrados*3.5+36.99;
-    else
-    Categoria=763.88;
-    Iptu=Categoria+metrosQuadrados*3.5+36.99;
+if(tipodeMoradia="Precário" and metrosQuadrados<= 50)
+Categoria=429.99;
+valorIptu=Categoria+metrosQuadrados*1.5+26.99;
+  	
+	else
+	if(tipodeMoradia="Popular" and metrosQuadrados<= 50)
+	Categoria=536.76;
+	valorIptu=Categoria+metrosQuadrados*1.5+26.99;
+	
+    	else
+		Categoria=763.88;
+		valorIptu=Categoria+metrosQuadrados*1.5+26.99;
+
+			if(tipodeMoradia="Precário" and metrosQuadrados<= 50.01 and metrosQudrados<=75)
+			Categoria=429.99;
+			valorIptu=Categoria+metrosQuadrados*2.5+36.99;
+else
+if(tipodeMoradia="Popular" and metrosQuadrados<= 50.01 and metrosQuadrados<=75)
+Categoria=536.76;
+valorIptu=Categoria+metrosQuadrados*2.5+36.99;
+
+	else
+	Categoria=763.88;
+    valorIptu=Categoria+metrosQuadrados*2.5+36.99;
+    
+		if(tipodeMoradia="Precário" and metrosQuadrados>75)
+		Categoria=429.99;
+		valorIptu=Categoria+metrosQuadrados*3.5+36.99;
+		
+  			else
+			if(tipodeMoradia="Popular" and metrosQuadrados>75)
+			Categoria=536.76;
+			valorIptu=Categoria+metrosQuadrados*3.5+36.99;
+    			
+				else
+				Categoria=763.88;
+				valorIptu=Categoria+metrosQuadrados*3.5+36.99;
+
 }
  void Apartamento::getvalorIptu() 
  {

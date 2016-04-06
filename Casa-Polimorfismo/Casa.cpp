@@ -20,6 +20,7 @@ ostream &operator <<(ostream &out, const Casa &c)
 Casa::Casa( const Casa &novaCasa)
 {
 	
+	
 }
 
 
@@ -235,3 +236,4 @@ void Casa::informartipodeMoradia()
  	cout<<valorIptu;
  };
 
+#include "Casa.h"

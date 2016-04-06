@@ -2,22 +2,20 @@
 #define MANSAO_H
 #include<iostream>
 #include<stdlib.h>
-#include "Casa.h"
+#include <casa.h>
+using namespace std;
 
 class Mansao : public Casa
 {
 	public:
 		Mansao();
 		Mansao(int Empregados);
-		void setquantEmpregados();
-		void setnumCozinheiros();
-		void setnumCamareiros();
-		void setnumBabas();
-		void getnumCozinheiros();
-		void getnumCamareiros();
-		void getnumBabas();
+		void setquantEmpregados(int);
+		void setnumCozinheiros(int);
+		void setnumCamareiros(int);
+		void setnumBabas(int);
 		void getpagamentoTotal();
-			void calcularpagamentoTotal();
+		void calcularpagamentoTotal();
 		void calcularsalCozinheiros();
 		void calcularsalCamareiros();
 		void calcularsalBabas();
@@ -37,3 +35,4 @@ class Mansao : public Casa
 };
 
 #endif
+

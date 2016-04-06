@@ -1,6 +1,5 @@
 #ifndef MORADIA_H
 #define MORADIA_H
-
 #include <string>
 #include <iostream>
 #include <stdlib.h>
@@ -39,19 +38,20 @@ Moradia (const string &proprietario="JAMILLY VALÉRIA:\n", bool luz=false); // co
 	bool getluzdoQuarto();	
 	void ligarluzdoQuarto();
 	void desligarluzdoQuarto();
-	virtual float calcularvalorIptu ()=0;// USANDO O  POLIFORMISMO
+	virtual float calcularvalorIptu ()=0;// USANDO O  POLIMORFISMO
 
 
 protected:
 	string nomedoProprietario;
 	bool luzdoQuarto;
-	float calcularvalorIptu;// USANDO O POLIMORFISMO
+	float valorIptu;// USANDO O POLIMORFISMO
 	
 	
 	
 	
 };
 #endif//Moradia
- 
+
+
 
 

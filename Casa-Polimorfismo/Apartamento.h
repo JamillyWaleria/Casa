@@ -18,7 +18,7 @@ class Apartamento : public Moradia
 
 		
 		void setmetrosQuadrados(float);
-		int getmetrosQuadrados();
+		float getmetrosQuadrados();
 		void informarmetrosQuadrados() ;
 		
 		void settipodeMoradia(string);
@@ -31,13 +31,13 @@ class Apartamento : public Moradia
 		
 		void setvalorIptu(float);
 		float getvalorIptu();
-		void calcularvalorIptu();
+		virtual float calcularvalorIptu();
 		
 		
 	protected:
-		int metrosQuadrados;
+		float metrosQuadrados;
 		string tipodeMoradia;
-		string Categoria;
+		float Categoria;
 		float valorIptu;
 	
 };

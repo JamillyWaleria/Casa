@@ -24,11 +24,11 @@ Moradia::Moradia (const Moradia &novaMoradia){
  	
  }*/
  
- 			Moradia::Moradia(const string &proprietario, bool luz)
- 			{
- 			this->nomedoProprietario=proprietario;
- 			this->luzdoQuarto=luz;
-	 		}
+ 	Moradia::Moradia(const string &proprietario, bool luz)
+ 	{
+ 		this->nomedoProprietario=proprietario;
+ 		this->luzdoQuarto=luz;
+	}
 void Moradia::getProprietario()
 {
 	cout<<"\n"<<nomedoProprietario;
@@ -77,9 +77,6 @@ void Moradia::setluzdoQuarto(bool atual2)
 bool Moradia::getluzdoQuarto()// verifica o tipo de retorno da função.
 {
 		return this ->luzdoQuarto;// retorna o valor em boleano.
-}
+};
 
-Moradia::~Moradia()
-{
-}
 

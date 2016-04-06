@@ -13,7 +13,7 @@ CasaPraia::CasaPraia()
 	precoAluguel=100*quantDias+100*quantHospedes;
 
 }
-CasaPraia::CasaPraia(int quantHospedes, int quantDias)
+CasaPraia::CasaPraia(int quantHospedes, int quantDias, float precoAluguel)
 {
 	this->quantHospedes=quantHospedes;
 	precoAluguel=100*quantHospedes;
@@ -30,5 +30,7 @@ void CasaPraia::getexibirHospedes() const
 }
 void CasaPraia::getprecodoAluguel()
 {
+	cout<<" Valor de Aluguel da casa de praia:\n"
 	cout<<precoAluguel;
 };
+

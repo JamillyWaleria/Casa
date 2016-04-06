@@ -1,6 +1,7 @@
 #ifndef CASAPRAIA_H
 #define CASAPRAIA_H
-#include "Casa.h"
+#include <casa.h>
+using namespace std;
 
 class CasaPraia : public Casa
 {
@@ -12,8 +13,8 @@ class CasaPraia : public Casa
 		void setexibirHospedes() ;
 		void getexibirHospedes() const;
 		void getprecodoAluguel();
-		void setquantDias();
-		void getquantDias();
+		void setquantDias(int);
+		void getquantDias(int);
 		
 	protected:
 		float precoAluguel;
@@ -22,3 +23,4 @@ class CasaPraia : public Casa
 };
 
 #endif
+
